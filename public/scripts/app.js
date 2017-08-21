@@ -41,11 +41,12 @@ angular.module('profileApp', [])
             console.log("edit from id: " + profile._id);
             return vm.formProfile;
           }
+          return profile;
         });
         $http.put('/api/profile/' + vm.formProfile._id + "/edit",
           {
             name: vm.formProfile.name,
-            email: vm.formProfile.email,
+            email: vm.formProfile.email
           }
         ).then(function(res) {
             console.log("Update status: " + res.status);
