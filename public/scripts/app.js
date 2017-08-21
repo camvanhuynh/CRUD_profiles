@@ -38,6 +38,7 @@ angular.module('profileApp', [])
 
         vm.profiles = vm.profiles.map(function(profile) {
           if(profile._id === vm.formProfile._id) {
+            console.log("edit from id: " + profile._id);
             return vm.formProfile;
           }
         });
@@ -47,9 +48,9 @@ angular.module('profileApp', [])
             email: vm.formProfile.email,
           }
         ).then(function(res) {
-
+            console.log("Update status: " + res.status);
         }, function(res) {
-
+          console.log("Update status: " + res.status);
           vm.profiles = backup;
         });
       }
