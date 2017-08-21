@@ -12,6 +12,11 @@ var ProfileSchema = mongoose.Schema({
     unique: true,
     required: true
   },
+
+    gender:{
+        type: String,
+        required: true
+    },
 })
 
 module.exports = mongoose.model('Profile', ProfileSchema);
